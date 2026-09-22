@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenGL Docs: De Vertex a Index Buffer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Panell de Control i Teoria -->
+        <aside id="sidebar">
+            <h1>Pas 1: Del Triangle al Quad</h1>
+            <p>En OpenGL (i WebGPU), per fer un quadrat necessitem un <strong>Index Buffer</strong> si no volem duplicar vèrtexs a la memòria de la GPU.</p>
+            
+            <div class="control-group">
+                <label><strong>Mode de Renderitzat:</strong></label>
+                <div class="radio-options">
+                    <input type="radio" id="mode-triangle" name="render-mode" value="triangle" checked>
+                    <label for="mode-triangle">Triangle (Sense Índexs)</label>
+                </div>
+                <div class="radio-options">
+                    <input type="radio" id="mode-quad" name="render-mode" value="quad">
+                    <label for="mode-quad">Quad (Amb Index Buffer)</label>
+                </div>
+            </div>
+
+            <div id="code-explanation">
+                <h3>Dades enviades a la GPU:</h3>
+                <pre id="data-display">// Carregant dades...</pre>
+            </div>
+        </aside>
+
+        <!-- El Canvas de WebGPU -->
+        <main id="canvas-container">
+            <canvas id="webgpu-canvas"></canvas>
+        </main>
+    </div>
+
+    <!-- Carreguem el codi com a mòdul per poder fer imports -->
+    <script type="module" src="js/renderer.js"></script>
+</body>
+</html>
